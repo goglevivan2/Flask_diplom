@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Погода</h5>
+
+</div>
+
+ <div class="col-4 offset-1">
+     <form method="post" action="/add_weather">
+        <input type="text" name="inputCity" id="inputCity" class="form-control" placeholder="Город" >
+        <button type="submit">Данные о погоде в городе</button>
+     </form>
+     <p>
+
+
+     </p>
+            {% if weather_info != '' %}
+                <div class="alert alert-info">
+                    <b>Город:</b> {{weather_info['city']}}  <br>
+                    <b>Температура:</b> {{weather_info['temp']}}<sup>o</sup> <br>
+                    <img src="http://openweathermap.org/img/w/{{weather_info['icon']}}.png" alt="фото погоды" class="img-thumbnail">
+
+                </div>
+            {%endif%}
+            </div>
+
+</body>
+</html>
