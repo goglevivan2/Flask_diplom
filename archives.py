@@ -1,5 +1,6 @@
 import sqlite3
 import requests
+"""Автозаполнение таблицы данными об кусах валют в разное время"""
 con = sqlite3.connect('D:/Flask_diplom/archives.db')
 cur = con.cursor()
 cur.close()
@@ -11,6 +12,7 @@ DATE_ARRAY =[[10,4],[11,4],[12,4],[13,4],[14,4],[15,4],[16,4],[17,4],[18,4],[19,
             [21,5],[22,5],[23,5],[24,5],[25,5],[26,5],[27,5],[28,5],[29,5],[30,5],[31,5],
             [1,6],[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[10,6]
              ]
+# C 10.4.2019 по 10.6.2019
 for i in DATE_ARRAY:
     con = sqlite3.connect('D:/Flask_diplom/archives.db')
     cur = con.cursor()
