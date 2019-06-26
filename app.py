@@ -27,6 +27,8 @@ def add_weather():
     City.append(request.form['inputCity'])
     return redirect(url_for('weather'))
 
-
+@app.route("/archives")
+def archives():
+    return render_template('archives.html')
 if __name__ == "__main__":
     app.run()
