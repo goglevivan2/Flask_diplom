@@ -1,8 +1,10 @@
 from flask import Flask,render_template,request,url_for,redirect
 import parsing
+import sql_operations
 
 app = Flask(__name__)
 City = ['Minsk']
+Date = ['1.6.2019']
 @app.route("/")
 def hello():
     return render_template('index.html')
@@ -29,6 +31,16 @@ def add_weather():
 
 @app.route("/archives")
 def archives():
-    return render_template('archives.html')
+    date_info=[]
+    date = Date[-1]
+    date_info.append(sql_operations.m_sql(date))
+    date_info.append(sql_operations.w_sql(date))
+    date_info.append(sql_operations.c_sql(date))
+    return render_template('archives.html',date_info = date_info)
+
+@app.route("/add_archives")
+def add_archives():
+    Date.append(request.form['inputDate'])
+    return redirect(url_for('archives'))
 if __name__ == "__main__":
     app.run()

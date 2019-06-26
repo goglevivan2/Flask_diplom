@@ -3,8 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Архив</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Архив</h5>
+
+</div>
+
+ <div class="col-4 offset-1">
+     <form method="post" action="/add_archives">
+        <input type="text" name="inputDate" id="inputCity" class="form-control" placeholder="Дата (например: 1.6.2019)" >
+        <button type="submit">узнать</button>
+     </form>
+     <p>
+
+
+     </p>
+
+                <div class="alert alert-info">
+                    <b>Фильм</b> {{date_info[0]}}  <br>
+
+
+                </div>
+                <div class="alert alert-info">
+                    <b>Температура в Минске:</b> {{date_info[1]}}<sup>o</sup> <br>
+                </div>
+                <div class="alert alert-info">
+                    <b>USD:</b> {{date_info[2][0]}}  <br>
+                    <b>EUR:</b> {{date_info[2][1]}} <br>
+                </div>
+
+            </div>
 
 </body>
 </html>
